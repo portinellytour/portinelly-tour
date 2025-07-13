@@ -263,6 +263,10 @@ footer {
     color: #4267B2;
 }
 
+.social-links a:nth-child(2):hover {
+    color: #0056b3;
+}
+
 .social-links a:nth-child(3) {
     color: #000000;
 }
@@ -275,6 +279,46 @@ footer {
     font-size: 0.8rem;
     color: #777;
     margin-top: 10px;
+}
+
+/* Estilos para a lista de serviços */
+.services-list-hidden {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    margin: 0 20px;
+    transition: all 0.5s ease-out;
+    background-color: #f8f9fa;
+    border-radius: 15px;
+}
+
+.services-list-visible {
+    max-height: 500px; /* Altura suficiente para todos os itens */
+    overflow: hidden;
+    padding: 20px;
+    margin: -10px 20px 20px 20px; /* Ajuste para conectar visualmente ao botão */
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.5s ease-in;
+}
+
+.services-list-visible ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.services-list-visible li {
+    padding: 12px 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.services-list-visible li:last-child {
+    border-bottom: none;
 }
 
 /* Floating Decorative Elements */

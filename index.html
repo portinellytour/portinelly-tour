@@ -22,61 +22,35 @@
         </header>
 
         <div class="links-container">
-            <!-- Passeios de Barco -->
-            <a href="#" class="link-card boat-tour">
+            <!-- Botão Programações -->
+            <a href="#" id="programacoes-btn" class="link-card packages">
                 <div class="icon-container">
-                    <i class="fas fa-ship"></i>
+                    <i class="fas fa-calendar-alt"></i>
                 </div>
                 <div class="link-text">
-                    <h3>Passeios de Barco</h3>
-                    <p>Conheça nossas ilhas paradisíacas</p>
+                    <h3>Programações</h3>
+                    <p>Clique para ver todos os nossos serviços</p>
                 </div>
-                <div class="arrow">
-                    <i class="fas fa-chevron-right"></i>
+                <div class="arrow" id="programacoes-arrow">
+                    <i class="fas fa-chevron-down"></i>
                 </div>
             </a>
 
-            <!-- Passeios de Buggy -->
-            <a href="#" class="link-card buggy-tour">
-                <div class="icon-container">
-                    <i class="fas fa-car-side"></i>
-                </div>
-                <div class="link-text">
-                    <h3>Aventura de Buggy</h3>
-                    <p>Explore nossas praias e dunas</p>
-                </div>
-                <div class="arrow">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </a>
-
-            <!-- Voo de Paramotor -->
-            <a href="#" class="link-card paramotor">
-                <div class="icon-container">
-                    <i class="fas fa-parachute-box"></i>
-                </div>
-                <div class="link-text">
-                    <h3>Voo de Paramotor</h3>
-                    <p>Veja o litoral de uma perspectiva única</p>
-                </div>
-                <div class="arrow">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </a>
-
-            <!-- Pacotes Promocionais -->
-            <a href="#" class="link-card packages">
-                <div class="icon-container">
-                    <i class="fas fa-gift"></i>
-                </div>
-                <div class="link-text">
-                    <h3>Pacotes Promocionais</h3>
-                    <p>Economize com nossos combos especiais</p>
-                </div>
-                <div class="arrow">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </a>
+            <!-- Lista de Serviços Oculta -->
+            <div id="programacoes-lista" class="services-list-hidden">
+                <ul>
+                    <li>🚤 Passeio De Barco</li>
+                    <li>🛺 Passeio De Quadriciclo</li>
+                    <li>🛻 Passeio De Buggy</li>
+                    <li>🤿 Mergulho De Batismo</li>
+                    <li>🪂 Paramotor</li>
+                    <li>🏨 Hospedagem</li>
+                    <li>🏠 Casa pra Temporada</li>
+                    <li>🚙 Transfer</li>
+                    <li>🛥️ Lancha</li>
+                    <li>🚤 Jetski</li>
+                </ul>
+            </div>
 
             <!-- Reservas pelo WhatsApp -->
             <a href="https://wa.me/5522981692065" class="link-card whatsapp" target="_blank">
@@ -141,5 +115,27 @@
         <div class="cloud cloud-1"></div>
         <div class="cloud cloud-2"></div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('programacoes-btn');
+            const list = document.getElementById('programacoes-lista');
+            const arrow = document.getElementById('programacoes-arrow').querySelector('i');
+
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (list.classList.contains('services-list-hidden')) {
+                    list.classList.remove('services-list-hidden');
+                    list.classList.add('services-list-visible');
+                    arrow.classList.remove('fa-chevron-down');
+                    arrow.classList.add('fa-chevron-up');
+                } else {
+                    list.classList.remove('services-list-visible');
+                    list.classList.add('services-list-hidden');
+                    arrow.classList.remove('fa-chevron-up');
+                    arrow.classList.add('fa-chevron-down');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
